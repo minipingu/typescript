@@ -6,3 +6,4 @@ var RollNumbers;
 })(RollNumbers || (RollNumbers = {}));
 let John = RollNumbers.kelly;
 typeof (John);
+//# sourceMappingURL=6-enum.js.map
