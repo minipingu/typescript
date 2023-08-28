@@ -91,7 +91,7 @@ greet(undefined)
 // 7. Optional Chaining
 
 type Customer = {
-	birthday: Date
+	birthday?: Date
 }
 
 function getCustomer(id: number): Customer | null | undefined {
@@ -101,4 +101,42 @@ function getCustomer(id: number): Customer | null | undefined {
 let customer = getCustomer(1)
 // optional chaining using ? if there is customer, birthday can be accessed
 //this is called Optional property access operator
-console.log(customer?.birthday)
+console.log(customer?.birthday?.getFullYear())
+
+//Optional element access operator
+//customers?[0]
+
+//Optional call
+let log: any = null
+// ini manggil function tapi dengan optional, kalo memang benar-benar function barulah dipanggil, tapi kalau null tidak terpanggil
+log?.('a')
+
+// 8. Nullish coalescing operator
+let speed: number | null = null
+let ride = {
+	//is speed falsy? use speed if not, use 30 if falsy
+	speed: speed ?? 30,
+}
+
+//9. Type Assertions
+//we can use .... as Blablablah, or using prefix <>
+let phone = <HTMLInputElement>document.getElementById('phone')
+phone.value
+
+//10. Unknown types
+// if we dont know what type, we can use unknown and narrowing it using if, then we can access to property or method
+function render(document: unknown) {
+	if (typeof document === 'string') {
+		document.indexOf
+	}
+}
+
+//11. never type
+//telling compiler that this function never return anything
+//if not using never, it will return void
+function processEvents(): never {
+	while (true) {}
+}
+
+processEvents()
+console.log('....') // grayed because it will not get executed, it stuck in process events
