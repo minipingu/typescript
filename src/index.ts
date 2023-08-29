@@ -139,4 +139,4 @@ function processEvents(): never {
 }
 
 processEvents()
-console.log('....') // grayed because it will not get executed, it stuck in process events
+// console.log('....') // grayed because it will not get executed, it stuck in process events
