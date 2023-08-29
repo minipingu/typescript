@@ -46,6 +46,7 @@ console.log(seats) // { A1: 'Minipigu', A2: 'Kakapingu', A3: 'test' }
 class Ride {
 	private static _activeRides: number = 0
 	start() {
+		//so we access everything about static members using classname
 		Ride._activeRides++
 	}
 	stop() {
@@ -55,11 +56,38 @@ class Ride {
 		return Ride._activeRides
 	}
 }
-
+// no static? access from instance
 let ride1 = new Ride()
 ride1.start() // adding 1 to activeRides = 1
-
 let ride2 = new Ride()
 ride2.start() // adding 1 to activeRides = 2
 
+//of course the getter too, access from class
 console.log(Ride.activeRides) //2
+//
+
+//11. inheritance
+
+class Person {
+	constructor(public firstName: string, public lastName: string) {}
+
+	getfullname() {
+		return this.firstName + ' ' + this.lastName
+	}
+
+	walk(): void {
+		console.log('Walking')
+	}
+}
+
+class Student extends Person {
+	constructor(public studentId: number, firstName: string, lastName: string) {
+		super(firstName, lastName)
+	}
+	takeTest() {
+		console.log('Taken test')
+	}
+}
+
+let student1 = new Student(1, 'mini', 'pingu')
+student1.takeTest()
