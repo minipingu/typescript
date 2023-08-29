@@ -16,5 +16,6 @@
 		"noUnusedLocals": true,
 		"noImplicitReturns": true,
 		"allowUnreachableCode": false
+		// "noImplicitOverride": true
 	}
 }

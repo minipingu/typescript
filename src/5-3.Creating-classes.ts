@@ -71,11 +71,11 @@ console.log(Ride.activeRides) //2
 class Person {
 	constructor(public firstName: string, public lastName: string) {}
 
-	getfullname() {
+	get fullName() {
 		return this.firstName + ' ' + this.lastName
 	}
-
-	walk(): void {
+	//protected modifier, but dont use this unless we are know what we are doing
+	protected walk(): void {
 		console.log('Walking')
 	}
 }
@@ -85,9 +85,57 @@ class Student extends Person {
 		super(firstName, lastName)
 	}
 	takeTest() {
+		this.walk()
 		console.log('Taken test')
 	}
 }
 
-let student1 = new Student(1, 'mini', 'pingu')
-student1.takeTest()
+class Teacher extends Person {
+	override get fullName() {
+		return 'Professor ' + super.fullName
+	}
+}
+
+let teacher = new Teacher('John', 'Smith')
+console.log(teacher.fullName)
+
+class Principal extends Person {
+	override get fullName() {
+		return 'Principal ' + super.fullName
+	}
+}
+
+//13. Polymorphism
+// Open Closed Principle
+// Classes Should be open for extension and closed for modification
+
+printNames([
+	new Student(1, 'mini', 'pingu'),
+	new Teacher('kaka', 'pingu'),
+	new Principal('anak', 'biru'),
+])
+
+function printNames(people: Person[]) {
+	for (let person of people) {
+		console.log(person.fullName)
+	}
+}
+
+// 15. Abtract Classes and Methods
+//abstract class is not ready class
+abstract class Shape {
+	constructor(public color: string) {}
+	abstract render(): void
+}
+
+class Circle extends Shape {
+	constructor(public radius: number, color: string) {
+		super(color)
+	}
+	override render(): void {
+		console.log('Rendering a circle')
+	}
+}
+// let shape = new Shape('red') //will get error if instantiated
+//this render call doesnt make sense because what shape to render?
+// shape.render()
