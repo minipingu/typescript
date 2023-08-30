@@ -139,3 +139,32 @@ class Circle extends Shape {
 // let shape = new Shape('red') //will get error if instantiated
 //this render call doesnt make sense because what shape to render?
 // shape.render()
+
+//16. Interfaces
+// interfaces are used for defining shape of Object
+// abstract class Calendar {
+// 	constructor(public name: string) {}
+// 	abstract addEvent(): void
+// 	abstract removeEvent(): void
+// }
+
+//interface used for type checking only
+interface Calendar {
+	name: string
+	addEvent(): void
+	removeEvent(): void
+}
+
+interface CloudCalendar extends Calendar {
+	sync(): void
+}
+//use ctrl+. for fast implement
+class GoogleCalender implements Calendar {
+	constructor(public name: string) {}
+	addEvent(): void {
+		throw new Error('Method not implemented.')
+	}
+	removeEvent(): void {
+		throw new Error('Method not implemented.')
+	}
+}
