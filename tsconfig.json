@@ -15,7 +15,8 @@
 		"noUnusedParameters": true,
 		"noUnusedLocals": true,
 		"noImplicitReturns": true,
-		"allowUnreachableCode": false
+		"allowUnreachableCode": false,
 		// "noImplicitOverride": true
+		"experimentalDecorators": true
 	}
 }

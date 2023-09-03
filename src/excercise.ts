@@ -99,14 +99,19 @@ if (typeof value === 'string') console.log(value.toUpperCase())
 // zipCode: 3144,
 // },
 
-interface Address {
-	street: string
-	city: string
-	zipcode: number
-}
+// interface Address {
+// 	street: string
+// 	city: string
+// 	zipcode: number
+// }
 
-interface Employee3 {
-	name: string
-	salary: number
-	address: Address
+// interface Employee3 {
+// 	name: string
+// 	salary: number
+// 	address: Address
+// }
+
+// EXCERCISE GENERICS
+function echo4<T>(arg: T): T {
+	return arg
 }
