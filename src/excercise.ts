@@ -115,3 +115,12 @@ if (typeof value === 'string') console.log(value.toUpperCase())
 function echo4<T>(arg: T): T {
 	return arg
 }
+
+// Decorator
+function Sauce(sauce: string) {
+	return (constructor: Function) => {
+		constructor.prototype.sauce = sauce
+	}
+}
+@Sauce('pesto')
+class Pizza {}

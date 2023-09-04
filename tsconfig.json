@@ -12,7 +12,7 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"noImplicitAny": true,
-		"noUnusedParameters": true,
+		// "noUnusedParameters": true,
 		"noUnusedLocals": true,
 		"noImplicitReturns": true,
 		"allowUnreachableCode": false,

@@ -17,4 +17,7 @@ let Dog = {
 let value = 'a';
 if (typeof value === 'string')
     console.log(value.toUpperCase());
+function echo4(arg) {
+    return arg;
+}
 //# sourceMappingURL=excercise.js.map

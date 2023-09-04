@@ -47,7 +47,7 @@ interface Product {
 	title: string
 }
 // then we call the fetch<T>()
-let result = fetch<User>('URL')
+// let result = fetch<User>('URL')
 
 //recap : fetch<T>():Result<T>, <T> -> interface User or interface Product
 

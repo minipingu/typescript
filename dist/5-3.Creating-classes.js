@@ -62,6 +62,7 @@ class Student extends Person {
         this.studentId = studentId;
     }
     takeTest() {
+        this.walk();
         console.log('Taken test');
     }
 }
@@ -85,6 +86,31 @@ printNames([
 function printNames(people) {
     for (let person of people) {
         console.log(person.fullName);
+    }
+}
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Circle extends Shape {
+    constructor(radius, color) {
+        super(color);
+        this.radius = radius;
+    }
+    render() {
+        console.log('Rendering a circle');
+    }
+}
+class GoogleCalender {
+    constructor(name) {
+        this.name = name;
+    }
+    addEvent() {
+        throw new Error('Method not implemented.');
+    }
+    removeEvent() {
+        throw new Error('Method not implemented.');
     }
 }
 //# sourceMappingURL=5-3.Creating-classes.js.map
